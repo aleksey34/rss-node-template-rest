@@ -20,9 +20,18 @@ const users = [
     order: '3',
     description: "task deskpription",
     userId: '2', // assignee
-    boardId: '22',
+    boardId: '2',
     columnId: "23"
-    }
+    },
+    {
+        id: '2' , 
+        title: 'task title',
+        order: '3',
+        description: "task deskpription",
+        userId: '2', // assignee
+        boardId: '22',
+        columnId: "23"
+        }
   ]
 
   const columns = [
