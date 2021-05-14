@@ -67,7 +67,7 @@ router.route('/:boardId').put(async (req, res) => {
 router.route('/:boardId').delete(async (req, res) => {
   const {boardId} = req.params;
 
-  const data = await boardsService.deleteBoardById(boardId);
+  const data = await boardsService.deleteBoard(boardId);
  
 
   if(data.id){

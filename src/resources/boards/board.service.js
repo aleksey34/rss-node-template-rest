@@ -12,7 +12,7 @@ const createBoard = (boardData) => boardsRepo.createBoard(boardData);
 const updateBoard = (boardId , boardData) => boardsRepo.updateBoard(boardId , boardData);
 
 
-const deleteBoardById = (boardId) => boardsRepo.deleteBoardById(boardId);
+const deleteBoard = (boardId) => boardsRepo.deleteBoard(boardId);
 
 
-module.exports = { getAll , getBoardById , deleteBoardById  , createBoard , updateBoard};
+module.exports = { getAll , getBoardById , deleteBoard  , createBoard , updateBoard};

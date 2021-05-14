@@ -12,7 +12,7 @@ const createUser = (userData) => usersRepo.createUser(userData);
 const updateUser = (userId , userData) => usersRepo.updateUser(userId , userData);
 
 
-const deleteUserById = (userId) => usersRepo.deleteUserById(userId);
+const deleteUser = (userId) => usersRepo.deleteUser(userId);
 
 
-module.exports = { getAll , getUserById , deleteUserById  , createUser , updateUser};
+module.exports = { getAll , getUserById , deleteUser  , createUser , updateUser};

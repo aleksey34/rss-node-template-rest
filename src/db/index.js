@@ -13,9 +13,26 @@ const users = [
      { id: "2" , title: "this board" , columns: 2},
   ]
 
+  const tasks = [
+    {
+    id: '1' , 
+    title: 'task title',
+    order: '3',
+    description: "task deskpription",
+    userId: '2', // assignee
+    boardId: '22',
+    columnId: "23"
+    }
+  ]
+
+  const columns = [
+    { id: '2', title: 'this is title of column', order: '2' } ,
+     { id: '1', title: 'this is title of column', order: '2' }
+  ]
 
 
 
 
 
-module.exports = { users, boards };
+
+module.exports = { users, boards , tasks , columns };

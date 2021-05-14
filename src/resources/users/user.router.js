@@ -66,7 +66,7 @@ router.route('/:userId').put(async (req, res) => {
 router.route('/:userId').delete(async (req, res) => {
   const {userId} = req.params;
 
-  const data = await usersService.deleteUserById(userId);
+  const data = await usersService.deleteUser(userId);
   if(data.id){
     res.status(204);
     res.end();

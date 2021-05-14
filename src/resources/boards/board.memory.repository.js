@@ -40,7 +40,7 @@ const board = db.boards.find( b=>b.id === boardId);
 
 
 
-const deleteBoardById = async (boardId) => {
+const deleteBoard = async (boardId) => {
 
    const board = db.boards.find( (b)=>b.id === boardId)
  
@@ -56,4 +56,4 @@ const deleteBoardById = async (boardId) => {
   
 
 };
-module.exports = { getAll , getBoardById , deleteBoardById , createBoard , updateBoard };
+module.exports = { getAll , getBoardById , deleteBoard , createBoard , updateBoard };

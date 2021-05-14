@@ -40,7 +40,7 @@ const user = db.users.find( u=>u.id === userId);
 
 
 
-const deleteUserById = async (userId) => {
+const deleteUser = async (userId) => {
 
    const user = db.users.find( (u)=>u.id === userId)
  
@@ -54,4 +54,4 @@ const deleteUserById = async (userId) => {
   
 
 };
-module.exports = { getAll , getUserById , deleteUserById , createUser , updateUser };
+module.exports = { getAll , getUserById , deleteUser , createUser , updateUser };
