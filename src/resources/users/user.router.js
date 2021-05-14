@@ -10,7 +10,7 @@ router.route('/').get(async (req, res) => {
 });
 
 router.route('/:userId').get(async (req, res) => {
-  const userId = Number(req.params.userId);
+  const {userId} = req.params;
  
   // console.log(req.params.id);
   const user = await usersService.getUserById(userId);
@@ -45,7 +45,7 @@ router.route('/').post(async (req, res) => {
 
 
 router.route('/:userId').put(async (req, res) => {
-  const userId = Number(req.params.userId);
+  const {userId} = req.params;
   const userData = req.body;  
 
  const user = await usersService.updateUser(userId ,userData);
@@ -64,7 +64,7 @@ router.route('/:userId').put(async (req, res) => {
 
 
 router.route('/:userId').delete(async (req, res) => {
-  const userId = Number(req.params.userId);
+  const {userId} = req.params;
 
   const data = await usersService.deleteUserById(userId);
   if(data.id){
