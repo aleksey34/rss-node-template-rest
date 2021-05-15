@@ -4,7 +4,8 @@ class Board {
   constructor({
     id = uuidv4(),
     title = 'BOARD',
-    columns='4' 
+    columns=[] ,
+   
   } = {}) {
     this.id = id;
     this.title = title;
@@ -17,10 +18,15 @@ class Board {
   }
 
   createBoard(){
+    const currentColumns = this.columns.map(c=>({...c  , id: uuidv4()}))
+    // const columnIds  = currentColumn.map(c=>{
+    //     return c.id;
+    //   })
+    
     return {
     id: this.id ,
      title: this.title ,
-      columns: this.columns
+      columns: currentColumns
     }
   }
 

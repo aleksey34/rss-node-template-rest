@@ -40,7 +40,6 @@ const user = db.users.find( u=>u.id === userId);
 };
 
 
-
 const deleteUser = async (userId) => {
 
    const user = db.users.find( (u)=>u.id === userId)

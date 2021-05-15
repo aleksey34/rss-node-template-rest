@@ -18,6 +18,8 @@ const createBoard = async (boardData) => {
 //   console.log(boardData);
    const newBoard = new Board(boardData);
    const board = newBoard.createBoard();
+   
+
 // console.log(board);
 db.boards =  [ ...db.boards , board];
    return board;
@@ -26,11 +28,11 @@ db.boards =  [ ...db.boards , board];
 
 
 const updateBoard = async (boardId , boardData) => {
-  // console.log(userId , "==================================")
+ 
 const board = db.boards.find( b=>b.id === boardId);
-// console.log(user);
+
   if(boardData.title &&  board.title !== boardData.title) board.title = boardData.title;
-  if( boardData.columns && board.columns !== boardData.columns) board.columns = boardData.columns;
+  if( boardData.columns && board.columns) board.columns = boardData.columns;
 
 
   db.boards = db.boards.map(b=>b.id === boardId ? board : b)
