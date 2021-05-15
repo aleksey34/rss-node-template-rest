@@ -22,7 +22,7 @@ const createTask = async (boardId , taskData) => {
    const newTask = new Task({ ...taskData , boardId });
    const task = newTask.createTask();
 // console.log(task);
-db.tasks =  db.tasks.push(task);
+db.tasks = [ ...db.tasks , {...task}   ];
    return task;
 };
  

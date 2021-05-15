@@ -49,7 +49,7 @@ const deleteUser = async (userId) => {
          if(t.userId === userId){
             return {...t , userId: null};
          }
-            return t;
+             return t;
          
       })
        db.users = db.users.filter((u)=>u.id !== userId );

@@ -51,7 +51,7 @@ router.route('/:userId').put(async (req, res) => {
  const user = await usersService.updateUser(userId ,userData);
 
  if(user.id){
-   res.status(201); 
+   res.status(200); 
    // map user fields to exclude secret fields like "password"
    res.json((User.toResponse(user)));
  }else{

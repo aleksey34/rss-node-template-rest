@@ -52,7 +52,7 @@ router.route('/:boardId').put(async (req, res) => {
  const board = await boardsService.updateBoard(boardId ,boardData);
 
  if(board.id){
-   res.status(201); 
+   res.status(200); 
    // map user fields to exclude secret fields like "password"
    res.json((Board.toResponse(board)));
  }else{

@@ -56,7 +56,7 @@ router.route('/:boardId/tasks/:taskId').put(async (req, res) => {
  const task = await tasksService.updateTask(boardId , taskId ,taskData);
 
  if(task.id){
-   res.status(201); 
+   res.status(200); 
    // map user fields to exclude secret fields like "password"
    res.json((Task.toResponse(task)));
  }else{

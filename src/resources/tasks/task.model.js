@@ -36,7 +36,7 @@ class Task {
       title: this.title,
        order: this.order,
         description: this.description,
-         userId: this.user,
+         userId: this.userId,
           boardId: this.boardId ,
            columnId: this.columnId
     }
