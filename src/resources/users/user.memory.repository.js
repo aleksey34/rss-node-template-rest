@@ -33,7 +33,8 @@ const user = db.users.find( u=>u.id === userId);
   if( userData.name && user.name !== userData.name) user.name = userData.name;
   if( userData.password) user.password = userData.password;
 
-  db.users = [...db.users , user];
+  db.users = db.users.map(u=>u.id === userId ? user : u);
+
 
   return user;
 };
@@ -45,6 +46,13 @@ const deleteUser = async (userId) => {
    const user = db.users.find( (u)=>u.id === userId)
  
   if(user && user.id){
+      db.tasks = db.tasks.map(t=>{
+         if(t.userId === userId){
+            return {...t , userId: null};
+         }
+            return t;
+         
+      })
        db.users = db.users.filter((u)=>u.id !== userId );
 
    return  {id: userId};

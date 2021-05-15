@@ -31,13 +31,12 @@ const board = db.boards.find( b=>b.id === boardId);
 // console.log(user);
   if(boardData.title &&  board.title !== boardData.title) board.title = boardData.title;
   if( boardData.columns && board.columns !== boardData.columns) board.columns = boardData.columns;
-//   if( userData.password) user.password = userData.password;
-// console.log(board)
-  db.boards = [...db.boards , board];
+
+
+  db.boards = db.boards.map(b=>b.id === boardId ? board : b)
  
   return board;
 };
-
 
 
 const deleteBoard = async (boardId) => {
@@ -45,15 +44,16 @@ const deleteBoard = async (boardId) => {
    const board = db.boards.find( (b)=>b.id === boardId)
  
   if(board && board.id){
+
        db.boards = db.boards.filter((b)=>b.id !== boardId );
+       db.tasks = db.tasks.filter((t)=>t.boardId !== boardId);
 
    return  {id: boardId};
 
   }
      return {id:''}
   
-  
-  
-
 };
+
+
 module.exports = { getAll , getBoardById , deleteBoard , createBoard , updateBoard };

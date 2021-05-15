@@ -29,20 +29,12 @@ db.tasks =  db.tasks.push(task);
  
 
 const updateTask = async (boardId , taskId ,taskData) => {
-  // console.log(taskId , "==================================")
-//   console.log(taskId , boardId , taskData);
+  
 const task = db.tasks.find( t=> t.boardId === boardId  && t.id === taskId);
-// console.log(task);
+
 const updatedTask = Task.updateTask({...task , boardId , ...taskData });
-// console.log(updatedTask);
-//   if(taskData.title &&  task.title !== taskData.title) task.title = taskData.title;
-//   if( taskData.order && task.order !== taskData.order) task.order = taskData.order;
-//   if( taskData.description && task.description !== taskData.description) task.description = taskData.description;
-//   if( taskData.userId && task.userId !== taskData.userId) task.userId = taskData.userId;
-//   if( taskData.boardId && task.boardId !== taskData.boardId) task.boardId = taskData.boardId;
-//   if( taskData.columnId && task.columnId !== taskData.columnId) task.columnId = taskData.columnId;
- 
- 
+
+
   db.tasks = db.tasks.map(t=>t.id  ===  updatedTask.id  && t.boardId === boardId  ?  updatedTask : t )
 
   return updatedTask;
